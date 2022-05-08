@@ -13,6 +13,9 @@
 		BA25CC9128263B8E0045E95E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA25CC8F28263B8E0045E95E /* Main.storyboard */; };
 		BA25CC9328263B8F0045E95E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA25CC9228263B8F0045E95E /* Assets.xcassets */; };
 		BA25CC9628263B8F0045E95E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA25CC9428263B8F0045E95E /* LaunchScreen.storyboard */; };
+		BAC61EED2827EF7C00A1AFC8 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC61EEA2827EF7C00A1AFC8 /* ChatTableViewCell.swift */; };
+		BAC61EEE2827EF7C00A1AFC8 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC61EEB2827EF7C00A1AFC8 /* ChatViewController.swift */; };
+		BAC61EEF2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC61EEC2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		BA25CC9228263B8F0045E95E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA25CC9528263B8F0045E95E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA25CC9728263B8F0045E95E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAC61EEA2827EF7C00A1AFC8 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		BAC61EEB2827EF7C00A1AFC8 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		BAC61EEC2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				BA25CC8928263B8E0045E95E /* AppDelegate.swift */,
 				BA25CC8B28263B8E0045E95E /* SceneDelegate.swift */,
 				BA25CC8D28263B8E0045E95E /* ViewController.swift */,
+				BAC61EEA2827EF7C00A1AFC8 /* ChatTableViewCell.swift */,
+				BAC61EEB2827EF7C00A1AFC8 /* ChatViewController.swift */,
+				BAC61EEC2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift */,
 				BA25CC8F28263B8E0045E95E /* Main.storyboard */,
 				BA25CC9228263B8F0045E95E /* Assets.xcassets */,
 				BA25CC9428263B8F0045E95E /* LaunchScreen.storyboard */,
@@ -139,7 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA25CC8E28263B8E0045E95E /* ViewController.swift in Sources */,
+				BAC61EED2827EF7C00A1AFC8 /* ChatTableViewCell.swift in Sources */,
 				BA25CC8A28263B8E0045E95E /* AppDelegate.swift in Sources */,
+				BAC61EEE2827EF7C00A1AFC8 /* ChatViewController.swift in Sources */,
+				BAC61EEF2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift in Sources */,
 				BA25CC8C28263B8E0045E95E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
