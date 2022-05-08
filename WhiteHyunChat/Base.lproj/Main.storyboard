@@ -50,7 +50,7 @@
                                             <constraint firstAttribute="height" constant="26" id="jhQ-eN-XTs"/>
                                         </constraints>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Z-qe-e4s" userLabel="Collect">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Z-qe-e4s" userLabel="Stories">
                                         <rect key="frame" x="0.0" y="41" width="374" height="50"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cDy-n4-4Sa">
@@ -105,7 +105,7 @@
                                         <rect key="frame" x="0.0" y="141" width="374" height="642"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KJm-DI-xZb">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="KJm-DI-xZb" customClass="ChatTableViewCell" customModule="WhiteHyunChat" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="44.5" width="374" height="70.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KJm-DI-xZb" id="lfw-Ic-yYG">
@@ -118,10 +118,10 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibk-yO-tIT">
                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40.5"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3SG-oL-z4F">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3SG-oL-z4F">
                                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40.5"/>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lh-t8-67g">
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lh-t8-67g">
                                                                             <rect key="frame" x="30" y="30.5" width="10" height="10"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="10" id="SVm-QE-fCS"/>
@@ -132,7 +132,6 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="6Cu-wS-KqB"/>
                                                                         <constraint firstAttribute="bottom" secondItem="3SG-oL-z4F" secondAttribute="bottom" id="GHD-V8-FkQ"/>
@@ -173,9 +172,10 @@
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfG-za-4hL">
-                                                                            <rect key="frame" x="19.5" y="25.5" width="4.5" height="15"/>
+                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfG-za-4hL">
+                                                                            <rect key="frame" x="9" y="25.5" width="15" height="15"/>
                                                                             <constraints>
+                                                                                <constraint firstAttribute="width" constant="15" id="9MP-Tk-SFY"/>
                                                                                 <constraint firstAttribute="height" constant="15" id="oIw-Ul-JyE"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="8"/>
@@ -197,6 +197,14 @@
                                                         <constraint firstAttribute="trailing" secondItem="gXJ-vw-RJ8" secondAttribute="trailing" constant="15" id="xSg-ey-72j"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="badgeLabel" destination="tfG-za-4hL" id="SRm-us-AWJ"/>
+                                                    <outlet property="currentChatLabel" destination="3o8-ee-9ja" id="3rs-Fi-GUK"/>
+                                                    <outlet property="nameLabel" destination="v6p-2x-ybr" id="QdV-ia-HI9"/>
+                                                    <outlet property="profileImageView" destination="3SG-oL-z4F" id="Zel-lC-eeI"/>
+                                                    <outlet property="statusLabel" destination="9lh-t8-67g" id="MOu-82-Cuz"/>
+                                                    <outlet property="timeLabel" destination="qZ3-G9-cHP" id="tOi-nc-j72"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
