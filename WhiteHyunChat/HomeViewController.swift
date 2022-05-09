@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
   
   @IBOutlet weak var decorationView: UIView!
   @IBOutlet weak var storyCollectionView: UICollectionView!
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 
 //MARK: - UICollectionViewDelegateFlowLayout
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     return 15
   }
@@ -41,7 +41,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
 //MARK: - UICollectionViewDataSource
 
-extension ViewController: UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return personCount
   }
@@ -68,13 +68,13 @@ extension ViewController: UICollectionViewDataSource {
 }
 
 
-extension ViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 7
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as? ChatTableViewCell else {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as? ChatListCell else {
       return UITableViewCell()
     }
     cell.updateUI(index: indexPath.row)

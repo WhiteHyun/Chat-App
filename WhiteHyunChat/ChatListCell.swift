@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChatTableViewCell: UITableViewCell {
+class ChatListCell: UITableViewCell {
 
   @IBOutlet weak var profileImageView: UIImageView!
   @IBOutlet weak var statusLabel: UILabel!
@@ -39,7 +39,7 @@ class ChatTableViewCell: UITableViewCell {
     statusLabel.layer.borderWidth = 2
     statusLabel.layer.borderColor = UIColor.white.cgColor
     
-    nameLabel.text = ChatTableViewCell.names.randomElement()
+    nameLabel.text = ChatListCell.names.randomElement()
     
     currentChatLabel.text = "Lorem ipsum dolor sit amet, cons..."
     
@@ -56,7 +56,7 @@ class ChatTableViewCell: UITableViewCell {
 
 }
 
-extension ChatTableViewCell {
+extension ChatListCell {
   
   enum StatusColor: String, CaseIterable {
     case online = "Online Color"
