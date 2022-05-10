@@ -264,16 +264,6 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VEP-UM-pmL">
                                         <rect key="frame" x="20" y="40" width="374" height="524"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="L6O-Xc-VvA">
-                                                <rect key="frame" x="0.0" y="44.5" width="374" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L6O-Xc-VvA" id="REu-kD-LoO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -357,6 +347,7 @@
                     <connections>
                         <outlet property="phoneCallButton" destination="PjI-71-FyM" id="LGR-Ze-ZcG"/>
                         <outlet property="sendButton" destination="l52-og-vSt" id="FKB-E9-myx"/>
+                        <outlet property="tableView" destination="VEP-UM-pmL" id="pMb-qb-iTI"/>
                         <outlet property="typingView" destination="gMB-su-My1" id="Qtf-VB-CzD"/>
                     </connections>
                 </viewController>
