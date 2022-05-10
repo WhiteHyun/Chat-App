@@ -7,29 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA08716C282801B400ECB67B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA08716B282801B400ECB67B /* FirebaseAuth */; };
+		BA08716E282801B400ECB67B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BA08716D282801B400ECB67B /* FirebaseFirestore */; };
+		BA0871862829767400ECB67B /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0871842829767400ECB67B /* MessageCell.swift */; };
+		BA0871872829767400ECB67B /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0871852829767400ECB67B /* MessageCell.xib */; };
+		BA08718B2829849600ECB67B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA08718A2829849600ECB67B /* Message.swift */; };
 		BA25CC8A28263B8E0045E95E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25CC8928263B8E0045E95E /* AppDelegate.swift */; };
 		BA25CC8C28263B8E0045E95E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25CC8B28263B8E0045E95E /* SceneDelegate.swift */; };
-		BA25CC8E28263B8E0045E95E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25CC8D28263B8E0045E95E /* ViewController.swift */; };
+		BA25CC8E28263B8E0045E95E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA25CC8D28263B8E0045E95E /* HomeViewController.swift */; };
 		BA25CC9128263B8E0045E95E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA25CC8F28263B8E0045E95E /* Main.storyboard */; };
 		BA25CC9328263B8F0045E95E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA25CC9228263B8F0045E95E /* Assets.xcassets */; };
 		BA25CC9628263B8F0045E95E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA25CC9428263B8F0045E95E /* LaunchScreen.storyboard */; };
-		BAC61EED2827EF7C00A1AFC8 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC61EEA2827EF7C00A1AFC8 /* ChatTableViewCell.swift */; };
+		BAC61EED2827EF7C00A1AFC8 /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC61EEA2827EF7C00A1AFC8 /* ChatListCell.swift */; };
 		BAC61EEE2827EF7C00A1AFC8 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC61EEB2827EF7C00A1AFC8 /* ChatViewController.swift */; };
 		BAC61EEF2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC61EEC2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift */; };
+		BAC61EF32827F70400A1AFC8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAC61EF22827F70400A1AFC8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA0871842829767400ECB67B /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		BA0871852829767400ECB67B /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		BA08718A2829849600ECB67B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		BA25CC8628263B8E0045E95E /* WhiteHyunChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhiteHyunChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA25CC8928263B8E0045E95E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA25CC8B28263B8E0045E95E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BA25CC8D28263B8E0045E95E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA25CC8D28263B8E0045E95E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA25CC9028263B8E0045E95E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA25CC9228263B8F0045E95E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA25CC9528263B8F0045E95E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA25CC9728263B8F0045E95E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAC61EEA2827EF7C00A1AFC8 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		BAC61EEA2827EF7C00A1AFC8 /* ChatListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListCell.swift; sourceTree = "<group>"; };
 		BAC61EEB2827EF7C00A1AFC8 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		BAC61EEC2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		BAC61EF22827F70400A1AFC8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA08716C282801B400ECB67B /* FirebaseAuth in Frameworks */,
+				BA08716E282801B400ECB67B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,14 +76,18 @@
 			children = (
 				BA25CC8928263B8E0045E95E /* AppDelegate.swift */,
 				BA25CC8B28263B8E0045E95E /* SceneDelegate.swift */,
-				BA25CC8D28263B8E0045E95E /* ViewController.swift */,
-				BAC61EEA2827EF7C00A1AFC8 /* ChatTableViewCell.swift */,
+				BA25CC8D28263B8E0045E95E /* HomeViewController.swift */,
+				BAC61EEA2827EF7C00A1AFC8 /* ChatListCell.swift */,
 				BAC61EEB2827EF7C00A1AFC8 /* ChatViewController.swift */,
 				BAC61EEC2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift */,
 				BA25CC8F28263B8E0045E95E /* Main.storyboard */,
 				BA25CC9228263B8F0045E95E /* Assets.xcassets */,
 				BA25CC9428263B8F0045E95E /* LaunchScreen.storyboard */,
 				BA25CC9728263B8F0045E95E /* Info.plist */,
+				BAC61EF22827F70400A1AFC8 /* GoogleService-Info.plist */,
+				BA0871842829767400ECB67B /* MessageCell.swift */,
+				BA0871852829767400ECB67B /* MessageCell.xib */,
+				BA08718A2829849600ECB67B /* Message.swift */,
 			);
 			path = WhiteHyunChat;
 			sourceTree = "<group>";
@@ -92,6 +108,10 @@
 			dependencies = (
 			);
 			name = WhiteHyunChat;
+			packageProductDependencies = (
+				BA08716B282801B400ECB67B /* FirebaseAuth */,
+				BA08716D282801B400ECB67B /* FirebaseFirestore */,
+			);
 			productName = WhiteHyunChat;
 			productReference = BA25CC8628263B8E0045E95E /* WhiteHyunChat.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +140,9 @@
 				Base,
 			);
 			mainGroup = BA25CC7D28263B8E0045E95E;
+			packageReferences = (
+				BA08716A282801B400ECB67B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BA25CC8728263B8E0045E95E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -135,6 +158,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA25CC9628263B8F0045E95E /* LaunchScreen.storyboard in Resources */,
+				BAC61EF32827F70400A1AFC8 /* GoogleService-Info.plist in Resources */,
+				BA0871872829767400ECB67B /* MessageCell.xib in Resources */,
 				BA25CC9328263B8F0045E95E /* Assets.xcassets in Resources */,
 				BA25CC9128263B8E0045E95E /* Main.storyboard in Resources */,
 			);
@@ -147,10 +172,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA25CC8E28263B8E0045E95E /* ViewController.swift in Sources */,
-				BAC61EED2827EF7C00A1AFC8 /* ChatTableViewCell.swift in Sources */,
+				BA25CC8E28263B8E0045E95E /* HomeViewController.swift in Sources */,
+				BAC61EED2827EF7C00A1AFC8 /* ChatListCell.swift in Sources */,
 				BA25CC8A28263B8E0045E95E /* AppDelegate.swift in Sources */,
 				BAC61EEE2827EF7C00A1AFC8 /* ChatViewController.swift in Sources */,
+				BA0871862829767400ECB67B /* MessageCell.swift in Sources */,
+				BA08718B2829849600ECB67B /* Message.swift in Sources */,
 				BAC61EEF2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift in Sources */,
 				BA25CC8C28263B8E0045E95E /* SceneDelegate.swift in Sources */,
 			);
@@ -370,6 +397,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BA08716A282801B400ECB67B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BA08716B282801B400ECB67B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA08716A282801B400ECB67B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		BA08716D282801B400ECB67B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA08716A282801B400ECB67B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA25CC7E28263B8E0045E95E /* Project object */;
 }
