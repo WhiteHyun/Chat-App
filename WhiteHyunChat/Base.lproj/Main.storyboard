@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gsA-JA-46y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UEe-mk-fWh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="1Bk-Ml-lEb">
             <objects>
-                <viewController id="gsA-JA-46y" sceneMemberID="viewController">
+                <viewController id="gsA-JA-46y" customClass="SignUpViewController" customModule="WhiteHyunChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MXX-qb-ujy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,11 +48,11 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbh-Lu-wsl">
                                                         <rect key="frame" x="0.0" y="22.5" width="302" height="60"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bi5-zc-iv4">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bi5-zc-iv4">
                                                                 <rect key="frame" x="15" y="22" width="272" height="16"/>
                                                                 <color key="textColor" red="0.47058823529411764" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" name="Background Color"/>
@@ -144,6 +144,14 @@
                             <constraint firstItem="C26-T8-QyA" firstAttribute="leading" secondItem="DKe-SN-HAY" secondAttribute="leading" constant="32" id="lzz-ol-bxB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="C26-T8-QyA" id="8uA-hx-w5Y"/>
+                        <outlet property="emailTextField" destination="Bi5-zc-iv4" id="orC-Kk-hFM"/>
+                        <outlet property="emailView" destination="zbh-Lu-wsl" id="np7-nI-cb2"/>
+                        <outlet property="passwordTextField" destination="QBK-p4-Xk4" id="hy1-ji-Fni"/>
+                        <outlet property="passwordView" destination="1Da-QJ-b1I" id="rU5-oc-xvZ"/>
+                        <outlet property="submitButton" destination="SyI-hs-lo4" id="hQK-HG-ztV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSs-BD-Cdv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -494,10 +502,10 @@
             </objects>
             <point key="canvasLocation" x="824.63768115942037" y="93.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="6KQ-Ke-l43">
             <objects>
-                <viewController id="UEe-mk-fWh" sceneMemberID="viewController">
+                <viewController id="UEe-mk-fWh" customClass="SignInViewController" customModule="WhiteHyunChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Nf-gj-zfE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -532,11 +540,11 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wy4-Jb-Dce">
                                                         <rect key="frame" x="0.0" y="22.5" width="302" height="60"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSr-1o-oWu">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSr-1o-oWu">
                                                                 <rect key="frame" x="15" y="22" width="272" height="16"/>
                                                                 <color key="textColor" red="0.47058823529999999" green="0.56470588239999997" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" name="Background Color"/>
@@ -628,6 +636,14 @@
                             <constraint firstItem="rzM-aX-ZWy" firstAttribute="top" secondItem="PVR-VE-G2J" secondAttribute="top" constant="74" id="VCP-pT-Ogr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="rzM-aX-ZWy" id="meX-6k-ODr"/>
+                        <outlet property="emailTextField" destination="KSr-1o-oWu" id="2mU-uM-6wf"/>
+                        <outlet property="emailView" destination="Wy4-Jb-Dce" id="01X-85-RrH"/>
+                        <outlet property="loginButton" destination="04y-kC-OAF" id="QPV-XR-1Zg"/>
+                        <outlet property="passwordTextField" destination="y1w-iM-b4H" id="5XH-KK-6Oa"/>
+                        <outlet property="passwordView" destination="7B4-Lc-jgg" id="5vP-xz-AXM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mn-rN-cgw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
