@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Firebase
+
 final class SignUpViewController: UIViewController {
   
   private enum ColorConstants {
@@ -35,7 +37,30 @@ final class SignUpViewController: UIViewController {
   
   
   @IBAction func submitButtonDidTap(_ sender: UIButton) {
+    
     view.endEditing(true)
+    
+    guard let email = emailTextField.text,
+          let password = passwordTextField.text,
+          !email.isEmpty,
+          !password.isEmpty
+    else {
+      let alert = UIAlertController(title: "경고", message: "비어있는 항목이 있습니다!", preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "확인", style: .default))
+      present(alert, animated: true)
+      return
+    }
+    
+    Auth.auth().createUser(withEmail: email, password: password) { [unowned self] authResult, error in
+      // Error?
+      if let error = error {
+        print(error.localizedDescription)
+      } else {
+        // No Error!
+        // Go root view controller!
+        self.navigationController?.popToRootViewController(animated: true)
+      }
+    }
   }
   
   
@@ -61,7 +86,7 @@ final class SignUpViewController: UIViewController {
     emailView.layer.shadowColor = ColorConstants.default?.cgColor
     emailView.layer.masksToBounds = false
     emailView.layer.borderColor = ColorConstants.point?.cgColor
-
+    
     passwordView.layer.shadowOffset = CGSize(width: 0, height: 0)
     passwordView.layer.shadowRadius = 12
     passwordView.layer.shadowColor = ColorConstants.default?.cgColor
