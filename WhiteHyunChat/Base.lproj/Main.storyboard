@@ -261,7 +261,7 @@
                                         <rect key="frame" x="0.0" y="141" width="374" height="598"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="KJm-DI-xZb" customClass="ChatListCell" customModule="WhiteHyunChat" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatListCell" id="KJm-DI-xZb" customClass="ChatListCell" customModule="WhiteHyunChat" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="44.5" width="374" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KJm-DI-xZb" id="lfw-Ic-yYG">

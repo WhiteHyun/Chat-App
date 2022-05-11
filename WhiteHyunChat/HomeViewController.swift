@@ -13,6 +13,7 @@ final class HomeViewController: UIViewController {
   
   private enum ConstantsID {
     static let signIn = "SignInVC"
+    static let cellID = "ChatListCell"
   }
   
   @IBOutlet weak var decorationView: UIView!
@@ -112,7 +113,7 @@ extension HomeViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(
-      withIdentifier: "ChatCell",
+      withIdentifier: ConstantsID.cellID,
       for: indexPath
     ) as? ChatListCell
     else {
