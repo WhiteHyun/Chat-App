@@ -45,13 +45,20 @@ final class SignUpViewController: UIViewController {
           !email.isEmpty,
           !password.isEmpty
     else {
-      let alert = UIAlertController(title: "경고", message: "비어있는 항목이 있습니다!", preferredStyle: .alert)
+      let alert = UIAlertController(
+        title: "경고",
+        message: "비어있는 항목이 있습니다!",
+        preferredStyle: .alert
+      )
       alert.addAction(UIAlertAction(title: "확인", style: .default))
       present(alert, animated: true)
       return
     }
     
-    Auth.auth().createUser(withEmail: email, password: password) { [unowned self] authResult, error in
+    Auth.auth().createUser(
+      withEmail: email,
+      password: password
+    ) { [unowned self] authResult, error in
       // Error?
       if let error = error {
         let alert = UIAlertController(
