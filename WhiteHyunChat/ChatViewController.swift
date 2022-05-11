@@ -17,7 +17,7 @@ final class ChatViewController: UIViewController {
     
     static let anotherUserBackgroundColor = UIColor(named: "Other Chat BackgroundColor")
     
-    static let currentUserBackgroundColor = UIColor(named: "backgroundColor")
+    static let currentUserBackgroundColor = UIColor(named: "Background Color")
     
   }
   
