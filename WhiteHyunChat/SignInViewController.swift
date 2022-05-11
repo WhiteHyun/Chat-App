@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Firebase
+
 final class SignInViewController: UIViewController {
   
   private enum ColorConstants {
@@ -36,7 +38,44 @@ final class SignInViewController: UIViewController {
   
   
   @IBAction func loginButtonDidTap(_ sender: UIButton) {
+    
     view.endEditing(true)
+    
+    // Email, Password 전부 기입되었는지 확인
+    guard let email = emailTextField.text,
+          let password = passwordTextField.text,
+          !email.isEmpty,
+          !password.isEmpty
+    else {
+      let alert = UIAlertController(
+        title: "경고",
+        message: "비어있는 항목이 있습니다!",
+        preferredStyle: .alert
+      )
+      alert.addAction(UIAlertAction(title: "확인", style: .default))
+      present(alert, animated: true)
+      return
+    }
+    
+    
+    // Try Login
+    Auth.auth().signIn(withEmail: email, password: password) { [unowned self] authResult, error in
+      // Error?
+      if let error = error {
+        let alert = UIAlertController(
+          title: "로그인 실패",
+          message: "\(error.localizedDescription)",
+          preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "확인", style: .default))
+        DispatchQueue.main.async {
+          self.present(alert, animated: true)
+        }
+      } else {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        self.navigationController?.popViewController(animated: true)
+      }
+    }
   }
   
   

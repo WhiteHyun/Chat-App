@@ -29,7 +29,10 @@ final class ChatViewController: UIViewController {
   var messages: [Message] = [
     Message(sender: "ME", body: "Hello, World?"),
     Message(sender: "YOU", body: "Have a Nice day :)"),
-    Message(sender: "ME", body: "고마워!! 여러가지로 고맙네 ㅎㅎ 잠시 긴 문자에 대한 테스트를 진행할 예정이야. 잘 보일지는 모르겠넹? 헤헤")
+    Message(
+      sender: "ME",
+      body: "고마워!! 여러가지로 고맙네 ㅎㅎ 잠시 긴 문자에 대한 테스트를 진행할 예정이야. 잘 보일지는 모르겠넹? 헤헤"
+    )
   ]
   
   override func viewDidLoad() {
@@ -87,12 +90,20 @@ extension ChatViewController: UITableViewDataSource {
       cell.leftView.isHidden = false
       cell.rightView.isHidden = true
       cell.messageBubble.backgroundColor = ChatConstants.anotherUserBackgroundColor
-      cell.messageBubble.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner, .layerMaxXMaxYCorner]
+      cell.messageBubble.layer.maskedCorners = [
+        .layerMaxXMinYCorner,
+        .layerMinXMinYCorner,
+        .layerMaxXMaxYCorner
+      ]
     } else {
       cell.leftView.isHidden = true
       cell.rightView.isHidden = false
       cell.messageBubble.backgroundColor = ChatConstants.currentUserBackgroundColor
-      cell.messageBubble.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner, .layerMinXMaxYCorner]
+      cell.messageBubble.layer.maskedCorners = [
+        .layerMaxXMinYCorner,
+        .layerMinXMinYCorner,
+        .layerMinXMaxYCorner
+      ]
     }
     
     return cell

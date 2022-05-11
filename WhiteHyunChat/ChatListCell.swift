@@ -8,7 +8,7 @@
 import UIKit
 
 class ChatListCell: UITableViewCell {
-
+  
   @IBOutlet weak var profileImageView: UIImageView!
   @IBOutlet weak var statusLabel: UILabel!
   @IBOutlet weak var nameLabel: UILabel!
@@ -16,18 +16,27 @@ class ChatListCell: UITableViewCell {
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var badgeLabel: UILabel!
   
-  static let names = ["Kaylynn Vetrovs", "Paityn Carder", "Kierra Calzoni", "Madelyn Korsgaard", "Lydia Ekstrom Bothman", "Mira Schleifer", "Allison Press", "Erin Vetrovs"]
+  static let names = [
+    "Kaylynn Vetrovs",
+    "Paityn Carder",
+    "Kierra Calzoni",
+    "Madelyn Korsgaard",
+    "Lydia Ekstrom Bothman",
+    "Mira Schleifer",
+    "Allison Press",
+    "Erin Vetrovs"
+  ]
   
   override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    super.awakeFromNib()
+    // Initialization code
+  }
+  
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+    
+    // Configure the view for the selected state
+  }
   
   func updateUI(index: Int) {
     profileImageView.image = UIImage(named: "Person\(index + 1)")
@@ -53,7 +62,7 @@ class ChatListCell: UITableViewCell {
     
     
   }
-
+  
 }
 
 extension ChatListCell {

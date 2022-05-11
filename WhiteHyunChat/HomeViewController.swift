@@ -7,7 +7,13 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+import Firebase
+
+final class HomeViewController: UIViewController {
+  
+  private enum StoryboardID {
+    static let signIn = "SignInVC"
+  }
   
   @IBOutlet weak var decorationView: UIView!
   @IBOutlet weak var storyCollectionView: UICollectionView!
@@ -22,11 +28,28 @@ class HomeViewController: UIViewController {
     storyCollectionView.dataSource = self
     
     chatTableView.dataSource = self
-
+    
     
     // 뷰의 위쪽 모서리를 둥글게 함
     decorationView.layer.cornerRadius = 35
     decorationView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    
+    if Auth.auth().currentUser == nil {
+      guard let nextViewController = storyboard?.instantiateViewController(
+        withIdentifier: StoryboardID.signIn
+      )
+      else {
+        let alert = UIAlertController(
+          title: "오류",
+          message: "로그인 화면 이동 실패",
+          preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "확인", style: .default))
+        return
+      }
+      navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+      navigationController?.pushViewController(nextViewController, animated: true)
+    }
   }
   
 }
@@ -34,7 +57,11 @@ class HomeViewController: UIViewController {
 //MARK: - UICollectionViewDelegateFlowLayout
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    minimumInteritemSpacingForSectionAt section: Int
+  ) -> CGFloat {
     return 15
   }
 }
@@ -42,12 +69,21 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 //MARK: - UICollectionViewDataSource
 
 extension HomeViewController: UICollectionViewDataSource {
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    numberOfItemsInSection section: Int
+  ) -> Int {
     return personCount
   }
   
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryCell", for: indexPath) as? StoryCollectionViewCell else {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    cellForItemAt indexPath: IndexPath
+  ) -> UICollectionViewCell {
+    guard let cell = collectionView.dequeueReusableCell(
+      withReuseIdentifier: "StoryCell",
+      for: indexPath) as? StoryCollectionViewCell
+    else {
       return UICollectionViewCell()
     }
     cell.storyButton.layer.cornerRadius = 0.5 * cell.storyButton.bounds.size.width
@@ -74,7 +110,11 @@ extension HomeViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as? ChatListCell else {
+    guard let cell = tableView.dequeueReusableCell(
+      withIdentifier: "ChatCell",
+      for: indexPath
+    ) as? ChatListCell
+    else {
       return UITableViewCell()
     }
     cell.updateUI(index: indexPath.row)
