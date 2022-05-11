@@ -54,7 +54,15 @@ final class SignUpViewController: UIViewController {
     Auth.auth().createUser(withEmail: email, password: password) { [unowned self] authResult, error in
       // Error?
       if let error = error {
-        print(error.localizedDescription)
+        let alert = UIAlertController(
+          title: "에러",
+          message: "\(error.localizedDescription)",
+          preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "확인", style: .default))
+        DispatchQueue.main.async {
+          self.present(alert, animated: true)
+        }
       } else {
         // No Error!
         // Go root view controller!
