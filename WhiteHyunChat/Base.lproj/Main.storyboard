@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UEe-mk-fWh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gsA-JA-46y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -49,7 +49,7 @@
                                                         <rect key="frame" x="0.0" y="22.5" width="302" height="60"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bi5-zc-iv4">
-                                                                <rect key="frame" x="15" y="22" width="272" height="16"/>
+                                                                <rect key="frame" x="15" y="0.0" width="272" height="60"/>
                                                                 <color key="textColor" red="0.47058823529411764" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
@@ -57,9 +57,11 @@
                                                         </subviews>
                                                         <color key="backgroundColor" name="Background Color"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="Bi5-zc-iv4" secondAttribute="bottom" id="4hd-YW-gHp"/>
                                                             <constraint firstItem="Bi5-zc-iv4" firstAttribute="centerY" secondItem="zbh-Lu-wsl" secondAttribute="centerY" id="CIr-ba-xLf"/>
                                                             <constraint firstItem="Bi5-zc-iv4" firstAttribute="leading" secondItem="zbh-Lu-wsl" secondAttribute="leading" constant="15" id="DCd-Ep-Qqk"/>
                                                             <constraint firstAttribute="trailing" secondItem="Bi5-zc-iv4" secondAttribute="trailing" constant="15" id="GUS-fG-Yqo"/>
+                                                            <constraint firstItem="Bi5-zc-iv4" firstAttribute="top" secondItem="zbh-Lu-wsl" secondAttribute="top" id="OUK-9e-N8n"/>
                                                             <constraint firstAttribute="height" constant="60" id="znr-xL-zeG"/>
                                                         </constraints>
                                                     </view>
@@ -82,7 +84,7 @@
                                                         <rect key="frame" x="0.0" y="22.5" width="302" height="60"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBK-p4-Xk4">
-                                                                <rect key="frame" x="15" y="22.5" width="272" height="15"/>
+                                                                <rect key="frame" x="15" y="0.0" width="272" height="60"/>
                                                                 <color key="textColor" red="0.47058823529999999" green="0.56470588239999997" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -90,8 +92,10 @@
                                                         </subviews>
                                                         <color key="backgroundColor" name="Background Color"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="QBK-p4-Xk4" secondAttribute="bottom" id="28H-xe-irE"/>
                                                             <constraint firstAttribute="height" constant="60" id="43x-3C-4jy"/>
                                                             <constraint firstItem="QBK-p4-Xk4" firstAttribute="leading" secondItem="1Da-QJ-b1I" secondAttribute="leading" constant="15" id="7IN-8j-hr7"/>
+                                                            <constraint firstItem="QBK-p4-Xk4" firstAttribute="top" secondItem="1Da-QJ-b1I" secondAttribute="top" id="QaT-mf-bKC"/>
                                                             <constraint firstAttribute="trailing" secondItem="QBK-p4-Xk4" secondAttribute="trailing" constant="15" id="TUS-jN-bQ8"/>
                                                             <constraint firstItem="QBK-p4-Xk4" firstAttribute="centerY" secondItem="1Da-QJ-b1I" secondAttribute="centerY" id="iy7-YP-hQ5"/>
                                                         </constraints>
@@ -111,6 +115,9 @@
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                                                <connections>
+                                                    <action selector="submitButtonDidTap:" destination="gsA-JA-46y" eventType="touchUpInside" id="iOa-qB-B4e"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -541,7 +548,7 @@
                                                         <rect key="frame" x="0.0" y="22.5" width="302" height="60"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSr-1o-oWu">
-                                                                <rect key="frame" x="15" y="22" width="272" height="16"/>
+                                                                <rect key="frame" x="15" y="0.0" width="272" height="60"/>
                                                                 <color key="textColor" red="0.47058823529999999" green="0.56470588239999997" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
@@ -549,9 +556,11 @@
                                                         </subviews>
                                                         <color key="backgroundColor" name="Background Color"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="KSr-1o-oWu" secondAttribute="bottom" id="XX7-vV-fdy"/>
                                                             <constraint firstItem="KSr-1o-oWu" firstAttribute="leading" secondItem="Wy4-Jb-Dce" secondAttribute="leading" constant="15" id="rX3-ly-JpE"/>
                                                             <constraint firstAttribute="height" constant="60" id="sRH-jr-ePL"/>
                                                             <constraint firstItem="KSr-1o-oWu" firstAttribute="centerY" secondItem="Wy4-Jb-Dce" secondAttribute="centerY" id="sZb-Eg-dJw"/>
+                                                            <constraint firstItem="KSr-1o-oWu" firstAttribute="top" secondItem="Wy4-Jb-Dce" secondAttribute="top" id="tz3-EB-fRk"/>
                                                             <constraint firstAttribute="trailing" secondItem="KSr-1o-oWu" secondAttribute="trailing" constant="15" id="wmi-5r-JCU"/>
                                                         </constraints>
                                                     </view>
@@ -574,7 +583,7 @@
                                                         <rect key="frame" x="0.0" y="22.5" width="302" height="60"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y1w-iM-b4H">
-                                                                <rect key="frame" x="15" y="22.5" width="272" height="15"/>
+                                                                <rect key="frame" x="15" y="0.0" width="272" height="60"/>
                                                                 <color key="textColor" red="0.47058823529999999" green="0.56470588239999997" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -586,6 +595,8 @@
                                                             <constraint firstItem="y1w-iM-b4H" firstAttribute="centerY" secondItem="7B4-Lc-jgg" secondAttribute="centerY" id="XiP-6J-1cZ"/>
                                                             <constraint firstItem="y1w-iM-b4H" firstAttribute="leading" secondItem="7B4-Lc-jgg" secondAttribute="leading" constant="15" id="aeU-jU-akg"/>
                                                             <constraint firstAttribute="height" constant="60" id="bKC-ag-8od"/>
+                                                            <constraint firstAttribute="bottom" secondItem="y1w-iM-b4H" secondAttribute="bottom" id="e7H-jb-vjE"/>
+                                                            <constraint firstItem="y1w-iM-b4H" firstAttribute="top" secondItem="7B4-Lc-jgg" secondAttribute="top" id="fGN-h8-ZGs"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -603,6 +614,9 @@
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                                <connections>
+                                                    <action selector="loginButtonDidTap:" destination="UEe-mk-fWh" eventType="touchUpInside" id="Cba-fO-mIH"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

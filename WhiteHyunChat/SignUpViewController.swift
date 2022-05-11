@@ -9,6 +9,16 @@ import UIKit
 
 final class SignUpViewController: UIViewController {
   
+  private enum ColorConstants {
+    
+    static let `default` = UIColor(named: "Background Color")
+    
+    static let hover = UIColor.white
+    
+    static let point = UIColor(named: "Point Color")
+    
+  }
+  
   @IBOutlet weak var containerView: UIView!
   @IBOutlet weak var emailView: UIView!
   @IBOutlet weak var passwordView: UIView!
@@ -18,8 +28,16 @@ final class SignUpViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    emailTextField.delegate = self
+    passwordTextField.delegate = self
     updateUI()
   }
+  
+  
+  @IBAction func submitButtonDidTap(_ sender: UIButton) {
+    view.endEditing(true)
+  }
+  
   
   /// storyboard 내에 미처 못한 UI를 수정합니다.
   private func updateUI() {
@@ -36,5 +54,61 @@ final class SignUpViewController: UIViewController {
     containerView.layer.shadowRadius = 12
     containerView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
     containerView.layer.masksToBounds = false
+    
+    // view shadows
+    emailView.layer.shadowOffset = CGSize(width: 0, height: 0)
+    emailView.layer.shadowRadius = 12
+    emailView.layer.shadowColor = ColorConstants.default?.cgColor
+    emailView.layer.masksToBounds = false
+    emailView.layer.borderColor = ColorConstants.point?.cgColor
+
+    passwordView.layer.shadowOffset = CGSize(width: 0, height: 0)
+    passwordView.layer.shadowRadius = 12
+    passwordView.layer.shadowColor = ColorConstants.default?.cgColor
+    passwordView.layer.masksToBounds = false
+    passwordView.layer.borderColor = ColorConstants.point?.cgColor
+    
+    updateViewUI(emailView, hovered: false)
+    updateViewUI(passwordView, hovered: false)
+  }
+  
+  /// textField를 감싸는 View의 상태를 업데이트합니다.
+  /// 사용자가 textField를 터치한 경우 hovered 인자를 true로 받으면 됩니다.
+  /// `hovered`상태인 경우, 선택된 것처럼 뷰의 상태가 바뀝니다.
+  /// `default`상태인 경우, 본 View의 모습으로 돌아갑니다.
+  private func updateViewUI(_ view: UIView, hovered: Bool) {
+    if hovered {
+      view.backgroundColor =  ColorConstants.hover
+      view.layer.shadowOpacity = 1
+      view.layer.borderWidth = 1
+    } else {
+      view.backgroundColor = ColorConstants.default
+      view.layer.shadowOpacity = 0
+      view.layer.borderWidth = 0
+    }
+  }
+  
+  
+  /// textField를 감싸는 부모 View를 리턴합니다.
+  private func parentView(of textField: UITextField) -> UIView {
+    if emailView.subviews.contains(textField) {
+      return emailView
+    } else {
+      return passwordView
+    }
+  }
+}
+
+
+extension SignUpViewController: UITextFieldDelegate {
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    let view = parentView(of: textField)
+    updateViewUI(view, hovered: true)
+  }
+  
+  
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    let view = parentView(of: textField)
+    updateViewUI(view, hovered: false)
   }
 }
