@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="gsA-JA-46y" customClass="SignUpViewController" customModule="WhiteHyunChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MXX-qb-ujy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C26-T8-QyA">
-                                <rect key="frame" x="32" y="162" width="350" height="442"/>
+                                <rect key="frame" x="32" y="118" width="350" height="442"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="jl9-wy-FLJ">
                                         <rect key="frame" x="24" y="30" width="302" height="382"/>
@@ -397,8 +397,6 @@
                         <outlet property="chatTableView" destination="ZnW-fL-ic8" id="041-CE-hOh"/>
                         <outlet property="decorationView" destination="B0n-32-ngC" id="pIf-LI-dyR"/>
                         <outlet property="storyCollectionView" destination="cDy-n4-4Sa" id="1Sb-Kr-zz6"/>
-                        <segue destination="UEe-mk-fWh" kind="show" id="feI-1B-urD"/>
-                        <segue destination="pfK-2d-4RA" kind="show" id="M7Y-t3-sMA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -408,16 +406,16 @@
         <!--Chat View Controller-->
         <scene sceneID="6Zo-Mr-k5d">
             <objects>
-                <viewController id="pfK-2d-4RA" customClass="ChatViewController" customModule="WhiteHyunChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatVC" id="pfK-2d-4RA" customClass="ChatViewController" customModule="WhiteHyunChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k7I-fb-24h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ek3-E7-GgZ" userLabel="Decoration View">
-                                <rect key="frame" x="0.0" y="198" width="414" height="698"/>
+                                <rect key="frame" x="0.0" y="154" width="414" height="742"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VEP-UM-pmL">
-                                        <rect key="frame" x="20" y="40" width="374" height="500"/>
+                                        <rect key="frame" x="20" y="40" width="374" height="544"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -459,7 +457,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ekM-CM-lqa">
-                                <rect key="frame" x="20" y="123" width="379" height="40"/>
+                                <rect key="frame" x="20" y="79" width="379" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paityn Carder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dc5-h9-TDO">
                                         <rect key="frame" x="0.0" y="0.0" width="329" height="40"/>
@@ -501,6 +499,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RkS-dA-Ox9"/>
                     <connections>
+                        <outlet property="nameLabel" destination="dc5-h9-TDO" id="iya-69-4L7"/>
                         <outlet property="phoneCallButton" destination="PjI-71-FyM" id="LGR-Ze-ZcG"/>
                         <outlet property="sendButton" destination="l52-og-vSt" id="FKB-E9-myx"/>
                         <outlet property="tableView" destination="VEP-UM-pmL" id="pMb-qb-iTI"/>
@@ -520,7 +519,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rzM-aX-ZWy">
-                                <rect key="frame" x="32" y="162" width="350" height="456"/>
+                                <rect key="frame" x="32" y="118" width="350" height="456"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="tLh-Q1-QJa">
                                         <rect key="frame" x="24" y="30" width="302" height="396"/>

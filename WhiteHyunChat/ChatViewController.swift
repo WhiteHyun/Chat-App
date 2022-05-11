@@ -20,7 +20,9 @@ final class ChatViewController: UIViewController {
     static let currentUserBackgroundColor = UIColor(named: "Background Color")
     
   }
+  var otherPersonName: String?
   
+  @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var phoneCallButton: UIButton!
   @IBOutlet weak var sendButton: UIButton!
   @IBOutlet weak var typingView: UIView!
@@ -37,6 +39,9 @@ final class ChatViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // Update name
+    nameLabel.text = otherPersonName
     
     // delegate set
     tableView.dataSource = self

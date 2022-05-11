@@ -12,8 +12,13 @@ import Firebase
 final class HomeViewController: UIViewController {
   
   private enum ConstantsID {
+    
     static let signIn = "SignInVC"
+    
+    static let chat = "ChatVC"
+    
     static let cellID = "ChatListCell"
+    
   }
   
   @IBOutlet weak var decorationView: UIView!
@@ -28,6 +33,7 @@ final class HomeViewController: UIViewController {
     storyCollectionView.delegate = self
     storyCollectionView.dataSource = self
     
+    chatTableView.delegate = self
     chatTableView.dataSource = self
     
     
@@ -101,6 +107,27 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     cell.storyButton.imageView?.contentMode = .scaleAspectFill
     return cell
+  }
+}
+
+//MARK: - UITableViewDelegate
+
+extension HomeViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let chatViewController = storyboard?.instantiateViewController(
+      withIdentifier: ConstantsID.chat
+    ) as? ChatViewController,
+          let cell = tableView.dequeueReusableCell(
+            withIdentifier: ConstantsID.cellID,
+            for: indexPath
+          ) as? ChatListCell
+    else {
+      return
+    }
+    
+    chatViewController.otherPersonName = cell.nameLabel.text
+    navigationController?.pushViewController(chatViewController, animated: true)
+    
   }
 }
 
