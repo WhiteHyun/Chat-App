@@ -73,6 +73,7 @@ final class SignUpViewController: UIViewController {
       } else {
         // No Error!
         // Go root view controller!
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         self.navigationController?.popToRootViewController(animated: true)
       }
     }

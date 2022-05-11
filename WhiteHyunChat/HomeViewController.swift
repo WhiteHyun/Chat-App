@@ -34,10 +34,7 @@ final class HomeViewController: UIViewController {
     decorationView.layer.cornerRadius = 35
     decorationView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     
-    if let user =  Auth.auth().currentUser {
-      navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-      print(user)
-    } else {
+    if Auth.auth().currentUser == nil {
       guard let nextViewController = storyboard?.instantiateViewController(
         withIdentifier: StoryboardID.signIn
       )

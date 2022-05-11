@@ -72,6 +72,7 @@ final class SignInViewController: UIViewController {
           self.present(alert, animated: true)
         }
       } else {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         self.navigationController?.popViewController(animated: true)
       }
     }
