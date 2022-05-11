@@ -514,7 +514,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="6KQ-Ke-l43">
             <objects>
-                <viewController id="UEe-mk-fWh" customClass="SignInViewController" customModule="WhiteHyunChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInVC" id="UEe-mk-fWh" customClass="SignInViewController" customModule="WhiteHyunChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Nf-gj-zfE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

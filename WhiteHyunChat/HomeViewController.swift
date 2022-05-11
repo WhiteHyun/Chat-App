@@ -7,7 +7,13 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+import Firebase
+
+final class HomeViewController: UIViewController {
+  
+  private enum StoryboardID {
+    static let signIn = "SignInVC"
+  }
   
   @IBOutlet weak var decorationView: UIView!
   @IBOutlet weak var storyCollectionView: UICollectionView!
@@ -27,6 +33,26 @@ class HomeViewController: UIViewController {
     // 뷰의 위쪽 모서리를 둥글게 함
     decorationView.layer.cornerRadius = 35
     decorationView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    
+    if let user =  Auth.auth().currentUser {
+      navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+      print(user)
+    } else {
+      guard let nextViewController = storyboard?.instantiateViewController(
+        withIdentifier: StoryboardID.signIn
+      )
+      else {
+        let alert = UIAlertController(
+          title: "오류",
+          message: "로그인 화면 이동 실패",
+          preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "확인", style: .default))
+        return
+      }
+      navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+      navigationController?.pushViewController(nextViewController, animated: true)
+    }
   }
   
 }
