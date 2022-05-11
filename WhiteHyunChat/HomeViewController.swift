@@ -11,7 +11,7 @@ import Firebase
 
 final class HomeViewController: UIViewController {
   
-  private enum StoryboardID {
+  private enum ConstantsID {
     static let signIn = "SignInVC"
   }
   
@@ -36,7 +36,7 @@ final class HomeViewController: UIViewController {
     
     if Auth.auth().currentUser == nil {
       guard let nextViewController = storyboard?.instantiateViewController(
-        withIdentifier: StoryboardID.signIn
+        withIdentifier: ConstantsID.signIn
       )
       else {
         let alert = UIAlertController(
