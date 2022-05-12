@@ -58,7 +58,6 @@ final class ChatViewController: UIViewController {
     nameLabel.text = otherPersonName
     
     // delegate set
-    typingTextField.delegate = self
     tableView.dataSource = self
     
     
@@ -111,15 +110,7 @@ final class ChatViewController: UIViewController {
   
   
   @IBAction func sendButtonDidTaps(_ sender: UIButton) {
-    typingTextField.resignFirstResponder()
-  }
-}
-
-//MARK: - UITextFieldDelegate
-
-extension ChatViewController: UITextFieldDelegate {
-  func textFieldDidEndEditing(_ textField: UITextField) {
-    guard let messageBody = textField.text,
+    guard let messageBody = typingTextField.text,
           let messageSender = Auth.auth().currentUser?.email else {
       return
     }
@@ -136,7 +127,7 @@ extension ChatViewController: UITextFieldDelegate {
         print("Successfully saved data.")
       }
     }
-    textField.text = ""
+    typingTextField.text = ""
   }
 }
 
