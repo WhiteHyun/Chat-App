@@ -28,14 +28,7 @@ final class ChatViewController: UIViewController {
   @IBOutlet weak var typingView: UIView!
   @IBOutlet weak var tableView: UITableView!
   
-  var messages: [Message] = [
-    Message(sender: "ME", body: "Hello, World?"),
-    Message(sender: "YOU", body: "Have a Nice day :)"),
-    Message(
-      sender: "ME",
-      body: "고마워!! 여러가지로 고맙네 ㅎㅎ 잠시 긴 문자에 대한 테스트를 진행할 예정이야. 잘 보일지는 모르겠넹? 헤헤"
-    )
-  ]
+  var messages: [Message] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
