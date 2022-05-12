@@ -50,9 +50,11 @@ final class ChatViewController: UIViewController {
   var messages: [Message] = []
   
   let db = Firestore.firestore()
+  var listener: ListenerRegistration?
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    print("ChatViewViewDidLoad")
     
     // Update name
     nameLabel.text = otherPersonName
@@ -71,6 +73,11 @@ final class ChatViewController: UIViewController {
     loadMessages()
   }
   
+  
+  deinit {
+    self.listener?.remove()
+  }
+  
   /// Cell의 내부 View UI를 변경합니다. View Controller가 `load`된 뒤 실행하는 메소드입니다.
   private func updateUI() {
     phoneCallButton.layer.cornerRadius = 0.5 * phoneCallButton.bounds.size.height
@@ -82,7 +89,7 @@ final class ChatViewController: UIViewController {
   
   /// 이전에 대화했던 메시지를 불러옵니다.
   private func loadMessages() {
-    db.collection(ChatConstants.DB.collectionName)
+    self.listener = db.collection(ChatConstants.DB.collectionName)
       .order(by: ChatConstants.DB.date)
       .addSnapshotListener { [unowned self] querySnapshot, error in
         self.messages = []
