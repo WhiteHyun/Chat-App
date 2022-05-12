@@ -21,6 +21,10 @@ final class ChatViewController: UIViewController {
     
     static let currentUserBackgroundColor = UIColor(named: "Background Color")
     
+    static let currentUserPointColor = UIColor(named: "Point Color")?.withAlphaComponent(0.5)
+    
+    static let anotherUserPointColor = UIColor.black.withAlphaComponent(0.5)
+    
     enum DB {
       
       static let collectionName = "messages"
@@ -156,24 +160,27 @@ extension ChatViewController: UITableViewDataSource {
     cell.messageLabel.text = messages[indexPath.row].body
     cell.messageBubble.layer.cornerRadius = 10
     
-    if messages[indexPath.row].sender == "ME" {
+    // my messages
+    if messages[indexPath.row].sender == Auth.auth().currentUser!.email {
       cell.leftView.isHidden = false
       cell.rightView.isHidden = true
-      cell.messageBubble.backgroundColor = ChatConstants.anotherUserBackgroundColor
-      cell.messageBubble.layer.maskedCorners = [
-        .layerMaxXMinYCorner,
-        .layerMinXMinYCorner,
-        .layerMaxXMaxYCorner
-      ]
-    } else {
-      cell.leftView.isHidden = true
-      cell.rightView.isHidden = false
       cell.messageBubble.backgroundColor = ChatConstants.currentUserBackgroundColor
       cell.messageBubble.layer.maskedCorners = [
         .layerMaxXMinYCorner,
         .layerMinXMinYCorner,
         .layerMinXMaxYCorner
       ]
+      cell.timeLabel.textColor = ChatConstants.currentUserPointColor
+    } else {
+      cell.leftView.isHidden = true
+      cell.rightView.isHidden = false
+      cell.messageBubble.backgroundColor = ChatConstants.anotherUserBackgroundColor
+      cell.messageBubble.layer.maskedCorners = [
+        .layerMaxXMinYCorner,
+        .layerMinXMinYCorner,
+        .layerMaxXMaxYCorner
+      ]
+      cell.timeLabel.textColor = ChatConstants.anotherUserPointColor
     }
     
     return cell
