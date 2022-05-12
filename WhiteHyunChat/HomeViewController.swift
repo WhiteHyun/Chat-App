@@ -114,13 +114,10 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let chatViewController = storyboard?.instantiateViewController(
-      withIdentifier: ConstantsID.chat
-    ) as? ChatViewController,
-          let cell = tableView.dequeueReusableCell(
-            withIdentifier: ConstantsID.cellID,
-            for: indexPath
-          ) as? ChatListCell
+    guard let cell = tableView.cellForRow(at: indexPath) as? ChatListCell,
+          let chatViewController = storyboard?.instantiateViewController(
+            withIdentifier: ConstantsID.chat
+          ) as? ChatViewController
     else {
       return
     }
@@ -135,7 +132,7 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 7
+    return personCount
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
