@@ -65,8 +65,8 @@ final class ChatViewController: UIViewController {
     )
     // update UI
     updateUI()
+    loadMessages()
   }
-  
   
   /// Cell의 내부 View UI를 변경합니다. View Controller가 `load`된 뒤 실행하는 메소드입니다.
   private func updateUI() {
@@ -74,6 +74,38 @@ final class ChatViewController: UIViewController {
     sendButton.layer.cornerRadius = 0.5 * sendButton.bounds.size.height
     typingView.layer.cornerRadius = 0.5 * typingView.bounds.size.height
   }
+  
+  
+  
+  /// 이전에 대화했던 메시지를 불러옵니다.
+  private func loadMessages() {
+    db.collection(ChatConstants.DB.collectionName)
+      .order(by: ChatConstants.DB.date)
+      .addSnapshotListener { [unowned self] querySnapshot, error in
+        self.messages = []
+        guard let snapshotDocuments = querySnapshot?.documents else {
+          print("There was an issue retrieving data from Firstore. \(String(describing: error))")
+          return
+        }
+        
+        for document in snapshotDocuments {
+          let data = document.data()
+          if let sender = data[ChatConstants.DB.sender] as? String,
+             let messageBody = data[ChatConstants.DB.body] as? String {
+            
+            self.messages.append(Message(sender: sender, body: messageBody))
+            
+            DispatchQueue.main.async {
+              let indexPath = IndexPath(row: self.messages.endIndex - 1, section: 0)
+              self.tableView.reloadData()
+              self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+            }
+          }
+        }
+      }
+  }
+  
+  
   @IBAction func sendButtonDidTaps(_ sender: UIButton) {
     typingTextField.resignFirstResponder()
   }
