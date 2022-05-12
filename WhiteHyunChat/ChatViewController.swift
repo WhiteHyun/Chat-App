@@ -25,7 +25,7 @@ final class ChatViewController: UIViewController {
       
       static let collectionName = "messages"
       
-      static let senderField = "sender"
+      static let sender = "sender"
       
       static let body = "body"
       
@@ -40,6 +40,7 @@ final class ChatViewController: UIViewController {
   @IBOutlet weak var phoneCallButton: UIButton!
   @IBOutlet weak var sendButton: UIButton!
   @IBOutlet weak var typingView: UIView!
+  @IBOutlet weak var typingTextField: UITextField!
   @IBOutlet weak var tableView: UITableView!
   
   var messages: [Message] = []
@@ -53,6 +54,7 @@ final class ChatViewController: UIViewController {
     nameLabel.text = otherPersonName
     
     // delegate set
+    typingTextField.delegate = self
     tableView.dataSource = self
     
     
@@ -72,12 +74,34 @@ final class ChatViewController: UIViewController {
     sendButton.layer.cornerRadius = 0.5 * sendButton.bounds.size.height
     typingView.layer.cornerRadius = 0.5 * typingView.bounds.size.height
   }
+  @IBAction func sendButtonDidTaps(_ sender: UIButton) {
+    typingTextField.resignFirstResponder()
+  }
 }
 
-//MARK: - UITableViewDelegate
+//MARK: - UITextFieldDelegate
 
-extension ChatViewController: UITableViewDelegate {
-  
+extension ChatViewController: UITextFieldDelegate {
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    guard let messageBody = textField.text,
+          let messageSender = Auth.auth().currentUser?.email else {
+      return
+    }
+    db.collection(ChatConstants.DB.collectionName).addDocument(
+      data: [
+        ChatConstants.DB.sender: messageSender,
+        ChatConstants.DB.body: messageBody,
+        ChatConstants.DB.date: Date().timeIntervalSince1970
+      ]
+    ) {
+      if let error = $0 {
+        print("There was an issue saving data to firestore, \(error.localizedDescription)")
+      } else {
+        print("Successfully saved data.")
+      }
+    }
+    textField.text = ""
+  }
 }
 
 //MARK: - UITableViewDataSource

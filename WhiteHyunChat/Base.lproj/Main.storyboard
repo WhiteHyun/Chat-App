@@ -439,6 +439,9 @@
                                         <color key="tintColor" name="Background Color"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="paperplane.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="sendButtonDidTaps:" destination="pfK-2d-4RA" eventType="touchUpInside" id="kay-Hl-7hb"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Your message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHD-On-lRb">
                                         <rect key="frame" x="20" y="15" width="304" height="18.5"/>
@@ -503,6 +506,7 @@
                         <outlet property="phoneCallButton" destination="PjI-71-FyM" id="LGR-Ze-ZcG"/>
                         <outlet property="sendButton" destination="l52-og-vSt" id="FKB-E9-myx"/>
                         <outlet property="tableView" destination="VEP-UM-pmL" id="pMb-qb-iTI"/>
+                        <outlet property="typingTextField" destination="hHD-On-lRb" id="msc-JY-Rh8"/>
                         <outlet property="typingView" destination="gMB-su-My1" id="Qtf-VB-CzD"/>
                     </connections>
                 </viewController>
