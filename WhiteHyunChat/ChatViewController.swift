@@ -111,6 +111,7 @@ final class ChatViewController: UIViewController {
   
   @IBAction func sendButtonDidTaps(_ sender: UIButton) {
     guard let messageBody = typingTextField.text,
+          !messageBody.isEmpty,
           let messageSender = Auth.auth().currentUser?.email else {
       return
     }
