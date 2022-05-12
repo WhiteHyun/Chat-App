@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Firebase
+
 final class ChatViewController: UIViewController {
   
   private enum ChatConstants {
@@ -19,6 +21,18 @@ final class ChatViewController: UIViewController {
     
     static let currentUserBackgroundColor = UIColor(named: "Background Color")
     
+    enum DB {
+      
+      static let collectionName = "messages"
+      
+      static let senderField = "sender"
+      
+      static let body = "body"
+      
+      static let date = "date"
+      
+    }
+    
   }
   var otherPersonName: String?
   
@@ -29,6 +43,8 @@ final class ChatViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   var messages: [Message] = []
+  
+  let db = Firestore.firestore()
   
   override func viewDidLoad() {
     super.viewDidLoad()
