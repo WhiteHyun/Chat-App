@@ -101,9 +101,14 @@ final class ChatViewController: UIViewController {
         for document in snapshotDocuments {
           let data = document.data()
           if let sender = data[ChatConstants.DB.sender] as? String,
-             let messageBody = data[ChatConstants.DB.body] as? String {
+             let messageBody = data[ChatConstants.DB.body] as? String,
+             let messageDate = data[ChatConstants.DB.date] as? Double
+          {
             
-            self.messages.append(Message(sender: sender, body: messageBody))
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm"
+            let date = dateFormatter.string(from: Date(timeIntervalSince1970: messageDate))
+            self.messages.append(Message(sender: sender, body: messageBody, date: date))
             
             DispatchQueue.main.async {
               let indexPath = IndexPath(row: self.messages.endIndex - 1, section: 0)
@@ -158,6 +163,7 @@ extension ChatViewController: UITableViewDataSource {
     // 공통 변경사항
     cell.messageLabel.text = messages[indexPath.row].body
     cell.messageBubble.layer.cornerRadius = 10
+    cell.timeLabel.text = messages[indexPath.row].date
     
     // my messages
     if messages[indexPath.row].sender == Auth.auth().currentUser!.email {
