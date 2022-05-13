@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,18 +37,31 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:00 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d33-cO-SXD">
-                                        <rect key="frame" x="209.5" y="86" width="45.5" height="12"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XDf-nz-0M3">
+                                        <rect key="frame" x="199.5" y="86" width="55.5" height="12"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:00 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d33-cO-SXD">
+                                                <rect key="frame" x="0.0" y="0.0" width="45.5" height="12"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cJj-UA-UiB">
+                                                <rect key="frame" x="45.5" y="3" width="10" height="6.5"/>
+                                                <color key="tintColor" name="Point Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10" id="67G-v6-iEd"/>
+                                                    <constraint firstAttribute="height" constant="10" id="ebh-88-52E"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="d33-cO-SXD" secondAttribute="trailing" constant="10" id="4qE-FD-9ij"/>
                                     <constraint firstAttribute="bottom" secondItem="Z1B-cH-Fte" secondAttribute="bottom" constant="17" id="9Xh-6Y-QRn"/>
-                                    <constraint firstAttribute="bottom" secondItem="d33-cO-SXD" secondAttribute="bottom" constant="7" id="Dsh-Bf-DtH"/>
+                                    <constraint firstAttribute="bottom" secondItem="XDf-nz-0M3" secondAttribute="bottom" constant="7" id="JRn-BA-63e"/>
+                                    <constraint firstAttribute="trailing" secondItem="XDf-nz-0M3" secondAttribute="trailing" constant="10" id="SqC-lj-APw"/>
                                     <constraint firstItem="Z1B-cH-Fte" firstAttribute="leading" secondItem="OQL-Og-hWN" secondAttribute="leading" constant="10" id="c2t-sS-jLe"/>
                                     <constraint firstAttribute="trailing" secondItem="Z1B-cH-Fte" secondAttribute="trailing" constant="18" id="vOi-sq-fcc"/>
                                     <constraint firstItem="Z1B-cH-Fte" firstAttribute="top" secondItem="OQL-Og-hWN" secondAttribute="top" constant="17" id="ySr-P3-3TA"/>
@@ -76,12 +90,17 @@
                 <outlet property="messageBubble" destination="OQL-Og-hWN" id="boY-7u-zsY"/>
                 <outlet property="messageLabel" destination="Z1B-cH-Fte" id="wFK-8o-sUT"/>
                 <outlet property="rightView" destination="qUg-iZ-tjN" id="L2G-8Y-yb7"/>
+                <outlet property="successImageView" destination="cJj-UA-UiB" id="7ne-PM-Lyy"/>
                 <outlet property="timeLabel" destination="d33-cO-SXD" id="5SI-1f-KuM"/>
             </connections>
             <point key="canvasLocation" x="148.55072463768118" y="115.51339285714285"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <namedColor name="Point Color">
+            <color red="0.85100001096725464" green="0.18799999356269836" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

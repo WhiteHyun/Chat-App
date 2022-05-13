@@ -11,8 +11,14 @@ import Firebase
 
 final class HomeViewController: UIViewController {
   
-  private enum StoryboardID {
+  private enum ConstantsID {
+    
     static let signIn = "SignInVC"
+    
+    static let chat = "ChatVC"
+    
+    static let cellID = "ChatListCell"
+    
   }
   
   @IBOutlet weak var decorationView: UIView!
@@ -27,6 +33,7 @@ final class HomeViewController: UIViewController {
     storyCollectionView.delegate = self
     storyCollectionView.dataSource = self
     
+    chatTableView.delegate = self
     chatTableView.dataSource = self
     
     
@@ -36,7 +43,7 @@ final class HomeViewController: UIViewController {
     
     if Auth.auth().currentUser == nil {
       guard let nextViewController = storyboard?.instantiateViewController(
-        withIdentifier: StoryboardID.signIn
+        withIdentifier: ConstantsID.signIn
       )
       else {
         let alert = UIAlertController(
@@ -103,15 +110,34 @@ extension HomeViewController: UICollectionViewDataSource {
   }
 }
 
+//MARK: - UITableViewDelegate
+
+extension HomeViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let cell = tableView.cellForRow(at: indexPath) as? ChatListCell,
+          let chatViewController = storyboard?.instantiateViewController(
+            withIdentifier: ConstantsID.chat
+          ) as? ChatViewController
+    else {
+      return
+    }
+    
+    chatViewController.otherPersonName = cell.nameLabel.text
+    navigationController?.pushViewController(chatViewController, animated: true)
+    
+  }
+}
+
+//MARK: - UITableViewDataSource
 
 extension HomeViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 7
+    return personCount
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(
-      withIdentifier: "ChatCell",
+      withIdentifier: ConstantsID.cellID,
       for: indexPath
     ) as? ChatListCell
     else {

@@ -12,7 +12,7 @@ class MessageCell: UITableViewCell {
   @IBOutlet weak var leftView: UIView!
   @IBOutlet weak var messageBubble: UIView!
   @IBOutlet weak var rightView: UIView!
-  
+  @IBOutlet weak var successImageView: UIImageView!
   @IBOutlet weak var messageLabel: UILabel!
   @IBOutlet weak var timeLabel: UILabel!
   

@@ -9,6 +9,7 @@ import UIKit
 
 import Firebase
 import FirebaseCore
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     FirebaseApp.configure()
     let _ = Firestore.firestore()
+
+    IQKeyboardManager.shared.enable = true
+    IQKeyboardManager.shared.enableAutoToolbar = false
+    IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+    IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
     
     return true
   }
