@@ -176,6 +176,7 @@ extension ChatViewController: UITableViewDataSource {
         .layerMinXMaxYCorner
       ]
       cell.timeLabel.textColor = ChatConstants.currentUserPointColor
+      cell.successImageView.isHidden = false
     } else {
       cell.leftView.isHidden = true
       cell.rightView.isHidden = false
