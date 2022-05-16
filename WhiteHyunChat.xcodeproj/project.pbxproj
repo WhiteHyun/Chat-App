@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA08716C282801B400ECB67B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA08716B282801B400ECB67B /* FirebaseAuth */; };
-		BA08716E282801B400ECB67B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BA08716D282801B400ECB67B /* FirebaseFirestore */; };
 		BA0871862829767400ECB67B /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0871842829767400ECB67B /* MessageCell.swift */; };
 		BA0871872829767400ECB67B /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0871852829767400ECB67B /* MessageCell.xib */; };
 		BA08718B2829849600ECB67B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA08718A2829849600ECB67B /* Message.swift */; };
@@ -18,11 +16,14 @@
 		BA25CC9128263B8E0045E95E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA25CC8F28263B8E0045E95E /* Main.storyboard */; };
 		BA25CC9328263B8F0045E95E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA25CC9228263B8F0045E95E /* Assets.xcassets */; };
 		BA25CC9628263B8F0045E95E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA25CC9428263B8F0045E95E /* LaunchScreen.storyboard */; };
-		BA29DB85282D24D900BA02D4 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BA29DB84282D24D900BA02D4 /* IQKeyboardManagerSwift */; };
+		BA97AFCD2832334E00DC6986 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA97AFCC2832334E00DC6986 /* MessageManager.swift */; };
 		BAC61EED2827EF7C00A1AFC8 /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC61EEA2827EF7C00A1AFC8 /* ChatListCell.swift */; };
 		BAC61EEE2827EF7C00A1AFC8 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC61EEB2827EF7C00A1AFC8 /* ChatViewController.swift */; };
 		BAC61EEF2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC61EEC2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift */; };
 		BAC61EF32827F70400A1AFC8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAC61EF22827F70400A1AFC8 /* GoogleService-Info.plist */; };
+		BAE74581282E29960056D8DB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BAE74580282E29960056D8DB /* FirebaseAuth */; };
+		BAE74583282E29960056D8DB /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BAE74582282E29960056D8DB /* FirebaseFirestore */; };
+		BAE74586282E29D30056D8DB /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BAE74585282E29D30056D8DB /* IQKeyboardManagerSwift */; };
 		BAFCB802282A67E000EF8EF0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFCB801282A67E000EF8EF0 /* SignUpViewController.swift */; };
 		BAFCB804282A67EB00EF8EF0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFCB803282A67EB00EF8EF0 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 		BA25CC9228263B8F0045E95E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA25CC9528263B8F0045E95E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA25CC9728263B8F0045E95E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA97AFCC2832334E00DC6986 /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
 		BAC61EEA2827EF7C00A1AFC8 /* ChatListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListCell.swift; sourceTree = "<group>"; };
 		BAC61EEB2827EF7C00A1AFC8 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		BAC61EEC2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -52,9 +54,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA08716C282801B400ECB67B /* FirebaseAuth in Frameworks */,
-				BA08716E282801B400ECB67B /* FirebaseFirestore in Frameworks */,
-				BA29DB85282D24D900BA02D4 /* IQKeyboardManagerSwift in Frameworks */,
+				BAE74581282E29960056D8DB /* FirebaseAuth in Frameworks */,
+				BAE74583282E29960056D8DB /* FirebaseFirestore in Frameworks */,
+				BAE74586282E29D30056D8DB /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,24 +82,113 @@
 		BA25CC8828263B8E0045E95E /* WhiteHyunChat */ = {
 			isa = PBXGroup;
 			children = (
-				BA25CC8928263B8E0045E95E /* AppDelegate.swift */,
-				BA25CC8B28263B8E0045E95E /* SceneDelegate.swift */,
-				BA25CC8D28263B8E0045E95E /* HomeViewController.swift */,
-				BAC61EEA2827EF7C00A1AFC8 /* ChatListCell.swift */,
-				BAC61EEB2827EF7C00A1AFC8 /* ChatViewController.swift */,
-				BAC61EEC2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift */,
-				BA25CC8F28263B8E0045E95E /* Main.storyboard */,
-				BAFCB801282A67E000EF8EF0 /* SignUpViewController.swift */,
-				BAFCB803282A67EB00EF8EF0 /* SignInViewController.swift */,
-				BA25CC9228263B8F0045E95E /* Assets.xcassets */,
-				BA25CC9428263B8F0045E95E /* LaunchScreen.storyboard */,
+				BAE74593282E84360056D8DB /* Resource */,
+				BAE74590282E840F0056D8DB /* Source */,
 				BA25CC9728263B8F0045E95E /* Info.plist */,
 				BAC61EF22827F70400A1AFC8 /* GoogleService-Info.plist */,
-				BA0871842829767400ECB67B /* MessageCell.swift */,
-				BA0871852829767400ECB67B /* MessageCell.xib */,
-				BA08718A2829849600ECB67B /* Message.swift */,
 			);
 			path = WhiteHyunChat;
+			sourceTree = "<group>";
+		};
+		BAE74589282E83820056D8DB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BAE7458A282E83B20056D8DB /* Home */,
+				BAE7458B282E83BD0056D8DB /* Chat */,
+				BAE7458C282E83C90056D8DB /* Sign up */,
+				BAE7458D282E83CE0056D8DB /* Sign in */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BAE7458A282E83B20056D8DB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BAC61EEC2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift */,
+				BAC61EEA2827EF7C00A1AFC8 /* ChatListCell.swift */,
+				BA25CC8D28263B8E0045E95E /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BAE7458B282E83BD0056D8DB /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				BA0871842829767400ECB67B /* MessageCell.swift */,
+				BAC61EEB2827EF7C00A1AFC8 /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		BAE7458C282E83C90056D8DB /* Sign up */ = {
+			isa = PBXGroup;
+			children = (
+				BAFCB801282A67E000EF8EF0 /* SignUpViewController.swift */,
+			);
+			path = "Sign up";
+			sourceTree = "<group>";
+		};
+		BAE7458D282E83CE0056D8DB /* Sign in */ = {
+			isa = PBXGroup;
+			children = (
+				BAFCB803282A67EB00EF8EF0 /* SignInViewController.swift */,
+			);
+			path = "Sign in";
+			sourceTree = "<group>";
+		};
+		BAE7458E282E83E60056D8DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA08718A2829849600ECB67B /* Message.swift */,
+				BA97AFCC2832334E00DC6986 /* MessageManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BAE7458F282E83EF0056D8DB /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				BA0871852829767400ECB67B /* MessageCell.xib */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		BAE74590282E840F0056D8DB /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BA25CC8928263B8E0045E95E /* AppDelegate.swift */,
+				BA25CC8B28263B8E0045E95E /* SceneDelegate.swift */,
+				BAE74589282E83820056D8DB /* ViewControllers */,
+				BAE7458E282E83E60056D8DB /* Models */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		BAE74591282E841B0056D8DB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BA25CC9228263B8F0045E95E /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BAE74592282E84240056D8DB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BA25CC8F28263B8E0045E95E /* Main.storyboard */,
+				BA25CC9428263B8F0045E95E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BAE74593282E84360056D8DB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BAE74591282E841B0056D8DB /* Assets */,
+				BAE74592282E84240056D8DB /* Storyboards */,
+				BAE7458F282E83EF0056D8DB /* Nibs */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,9 +208,9 @@
 			);
 			name = WhiteHyunChat;
 			packageProductDependencies = (
-				BA08716B282801B400ECB67B /* FirebaseAuth */,
-				BA08716D282801B400ECB67B /* FirebaseFirestore */,
-				BA29DB84282D24D900BA02D4 /* IQKeyboardManagerSwift */,
+				BAE74580282E29960056D8DB /* FirebaseAuth */,
+				BAE74582282E29960056D8DB /* FirebaseFirestore */,
+				BAE74585282E29D30056D8DB /* IQKeyboardManagerSwift */,
 			);
 			productName = WhiteHyunChat;
 			productReference = BA25CC8628263B8E0045E95E /* WhiteHyunChat.app */;
@@ -150,8 +241,8 @@
 			);
 			mainGroup = BA25CC7D28263B8E0045E95E;
 			packageReferences = (
-				BA08716A282801B400ECB67B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				BA29DB83282D24D900BA02D4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				BAE7457F282E29960056D8DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BAE74584282E29D30056D8DB /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = BA25CC8728263B8E0045E95E /* Products */;
 			projectDirPath = "";
@@ -192,6 +283,7 @@
 				BAC61EEF2827EF7C00A1AFC8 /* StoryCollectionViewCell.swift in Sources */,
 				BAFCB804282A67EB00EF8EF0 /* SignInViewController.swift in Sources */,
 				BA25CC8C28263B8E0045E95E /* SceneDelegate.swift in Sources */,
+				BA97AFCD2832334E00DC6986 /* MessageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,15 +503,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BA08716A282801B400ECB67B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		BAE7457F282E29960056D8DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
 			};
 		};
-		BA29DB83282D24D900BA02D4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		BAE74584282E29D30056D8DB /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -430,19 +522,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BA08716B282801B400ECB67B /* FirebaseAuth */ = {
+		BAE74580282E29960056D8DB /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BA08716A282801B400ECB67B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = BAE7457F282E29960056D8DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		BA08716D282801B400ECB67B /* FirebaseFirestore */ = {
+		BAE74582282E29960056D8DB /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BA08716A282801B400ECB67B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = BAE7457F282E29960056D8DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		BA29DB84282D24D900BA02D4 /* IQKeyboardManagerSwift */ = {
+		BAE74585282E29D30056D8DB /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BA29DB83282D24D900BA02D4 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			package = BAE74584282E29D30056D8DB /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
